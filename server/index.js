@@ -23,8 +23,8 @@ app.get('/api/restaurants/:id/info', (req, res) => {
   //   });
   request
     .get(`http://127.0.0.1:3002/api/restaurants/${req.params.id}/info`)
-    .on('response', (response) => {
-      res.send(response).status(200);
+    .on('data', (data) => {
+      res.send(data).status(200);
     })
     .on('error', (err) => {
       res.sendStatus(500);
