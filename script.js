@@ -8,7 +8,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get(`http://localhost:1111/api/restaurants/${Math.ceil(Math.random() * 9999999) + 1}/info`);
+  const res = http.get('http://127.0.0.1:1111/api/restaurants/' + (Math.ceil(Math.random() * 9999999) + 1) + '/info');
   check(res, {
     'status was 200': r => r.status === 200,
     'status was 404': r => r.status === 404,

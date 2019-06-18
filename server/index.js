@@ -2,7 +2,6 @@ require('newrelic');
 const express = require('express');
 const path = require('path');
 const app = express();
-const axios = require('axios');
 const request = require('request');
 const PORT = 1111;
 
@@ -22,7 +21,7 @@ app.get('/api/restaurants/:id/info', (req, res) => {
   //     res.sendStatus(500);
   //   });
   request
-    .get(`http://127.0.0.1:3002/api/restaurants/${req.params.id}/info`)
+    .get('http://3.18.108.169:3002/api/restaurants/'+ req.params.id+ '/info')
     .on('data', (data) => {
       res.send(data).status(200);
     })
